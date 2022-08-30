@@ -1,4 +1,4 @@
-# 0x00.AirBnB clone - The consoleOA
+# 0x00.AirBnB clone - The console
 ![AirBnB Image](https://camo.githubusercontent.com/29aee5323f56eeaf0ca03669b3181f360af907609dc764ab1c5006815a03f4ff/68747470733a2f2f692e696d6775722e636f6d2f4a4f68615a356d2e706e67)
 
 ### Introduction
@@ -69,4 +69,3 @@ EOF  help  quit
 $
 ```
 - All tests should also pass in non-interactive mode: ```$ echo "python3 -m unittest discover tests" | bash```
-![process](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20220830%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220830T105920Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=d9352d1aa7c79884a424f2e1522dff8cbda9ef3a6d62523c19c733b4a7ee42da)
