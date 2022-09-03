@@ -56,13 +56,10 @@ class HBNBCommand(cmd.Cmd):
 
 
 	def do_quit(self, args):
-		return True
-	
-	def help_quit(self, args):
-		doc = """
-		This command quits the interpreter
-		"""
-		print(doc)
+                """
+                This command quits the interpreter
+                """
+                return True
 
 	def do_EOF(self, args):
 		"""
