@@ -135,7 +135,7 @@ class HBNBCommand(cmd.Cmd):
 			return
 		args = args.split(" ")
 		objects = storage.all()
-		key == ".".join(args)
+		key = ".".join(args)
 		obj = objects.get(key)
 		if obj:
 			print(obj)
