@@ -12,7 +12,22 @@ class HBNBCommand(cmd.Cmd):
 	"""
 	prompt = "(hbnb) "
 	
-	model_list = ["BaseModel", "User"]
+	model_list = ["BaseModel", "User", "City", "State", "Place", "Amenity", "Review"]
+
+	def precmd(self, args):
+		"""
+		This function runs before the onecmd and 
+		It is overridden to account for our dots notation for all 
+		commands
+		"""
+		if "." in args:
+			result = args.replace(".", " ").replace(",", " ").replace("(", " ") \
+					.replace(")", " ")
+			result = result.split(" ")
+			result[0] , result[1] = result[1], result[0]
+			result = " ".join(result)
+		return super().precmd(result)
+		
 
 	@classmethod
 	def handle_errors(cls, args, **kwargs):
@@ -258,6 +273,27 @@ class HBNBCommand(cmd.Cmd):
 				obj.save()
 				return
 		print("** instance id not found **")
+
+
+	def do_count(self, args):
+		"""
+		Gives the count of a particular model or instance
+		$ count <model>
+		
+		Error->
+		"""
+		if HBNBCommand.handle_errors(args, command = "count"):
+			return
+		count = 0
+		args = args.split(" ")
+		obj = storage.all()
+		
+		key = args[0]
+		for item in obj:
+			if key in item:
+				count += 1
+		print(count)
+
 
 
 if __name__ == "__main__":
