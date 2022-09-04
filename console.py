@@ -21,8 +21,7 @@ class HBNBCommand(cmd.Cmd):
 		commands
 		"""
 		if "." in args:
-			result = args.replace(".", " ").replace(",", " ").replace("(", " ") \
-					.replace(")", " ")
+			result = args.replace(".", " ").replace(",", " ").replace("(", " ").replace(")", " ")
 			result = result.split(" ")
 			result[0] , result[1] = result[1], result[0]
 			result = " ".join(result)
