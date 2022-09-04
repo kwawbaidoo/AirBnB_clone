@@ -5,6 +5,7 @@ import cmd
 from models.base_model import BaseModel
 from models.user import User
 from models import storage
+import re
 
 class HBNBCommand(cmd.Cmd):
 	"""
@@ -14,6 +15,8 @@ class HBNBCommand(cmd.Cmd):
 	
 	model_list = ["BaseModel", "User", "City", "State", "Place", "Amenity", "Review"]
 
+	str_dict = None
+
 	def precmd(self, args):
 		"""
 		This function runs before the onecmd and 
@@ -21,11 +24,16 @@ class HBNBCommand(cmd.Cmd):
 		commands
 		"""
 		if "." in args:
+			if "{" in args:
+				dict_ = re.search("{([^}]*)}", args).group(0)
+				HBNBCommand.str_dict = eval(dict_)
+				pass
+
 			result = args.replace(".", " ").replace(",", " ").replace("(", " ").replace(")", " ")
 			result = result.split(" ")
 			result[0] , result[1] = result[1], result[0]
-			result = " ".join(result)
-		return super().precmd(result)
+			args = " ".join(result)
+		return super().precmd(args)
 		
 
 	@classmethod
