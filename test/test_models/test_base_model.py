@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines unittests for models/base_model.py.
+"""This module defines unittests for models/base_model.py.
 Unittest classes:
     TestBaseModel_instantiation
     TestBaseModel_save
@@ -187,5 +187,5 @@ class TestBaseModel_to_dict(unittest.TestCase):
             bm.to_dict(None)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()
