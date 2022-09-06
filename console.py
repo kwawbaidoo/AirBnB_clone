@@ -78,19 +78,19 @@ class HBNBComand(cmd.Cmd):
         return True
 
     def onecmd(self, line):
-	"""
+        """
 	This function picks out the function from the command line 
 	args in order to execute
 	Has been overridden to account for quit and EOF separately
 	Has been overridden to account for other functions
 	"""
 
-	if args == "quit":
-	    return self.do_quit(line)
-	elif args == "EOF":
-	    return self.do_EOF(line)
-	else:
-	    cmd.Cmd.onecmd(self, line)
+        if line == "quit":
+            return self.do_quit(line)
+        elif line == "EOF":
+            return self.do_EOF(line)
+        else:
+            cmd.Cmd.onecmd(self, line)
 
     @classmethod
     def HBNBError(cls, line, command=None):
@@ -99,7 +99,7 @@ class HBNBComand(cmd.Cmd):
 	"""
         args = line.split()
         if not args:
-           print("** class name missing **")
+            print("** class name missing **")
             return True
         if args[0] not in HBNBComand.class_model:
             print("** class doesn't exist **")
